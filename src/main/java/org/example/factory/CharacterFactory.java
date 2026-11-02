@@ -10,11 +10,15 @@ import java.util.Map;
 public class CharacterFactory {
     private final Map<String, Character> characterMap = new HashMap<>();
 
-    public Character getCharacter(Fonts font, int size, Colors color){
-        String key = font.name() + "_" + size + "_" + color.name();
+    public Character getCharacter(String font, int size, String color, String character){
+        String key = font + "_" + size + "_" + color;
 
         if(!characterMap.containsKey(key)) characterMap.put(key, new Character(font, size, color));
 
-        return characterMap.get(key);
+        Character foundChar = characterMap.get(key);
+
+        foundChar.setCharacter(character);
+
+        return foundChar;
     }
 }
