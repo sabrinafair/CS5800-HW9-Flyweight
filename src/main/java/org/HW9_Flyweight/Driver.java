@@ -72,7 +72,7 @@ public class Driver {
             textInput = "this is sample input 4\n" +
                     ".\n";
             editor.handleCommand(new StringReader(textInput), command);
-            command = ":write driverSample.docx";
+            command = ":write HelloWorldCS5800.docx";
             editor.handleCommand(new StringReader(""), command);
 
         } catch (IOException exception) {
