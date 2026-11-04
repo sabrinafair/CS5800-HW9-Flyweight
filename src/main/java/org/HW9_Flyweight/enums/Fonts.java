@@ -1,4 +1,4 @@
-package org.example.enums;
+package org.HW9_Flyweight.enums;
 
 public enum Fonts {
     ARIAL,
