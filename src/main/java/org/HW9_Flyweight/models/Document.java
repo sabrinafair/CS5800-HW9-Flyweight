@@ -60,11 +60,13 @@ public class Document {
                             styledText.getText().charAt(i);
 
                     CharacterFlyweight flyweight =
-                            characterFactory.getCharacter(value);
+                            characterFactory.getCharacter(value, style.getSize(), style.getColor(), style.getFont());
 
                     text.append(
                             flyweight.getValue()
                     );
+
+//                    flyweight.applyTo(run);
                 }
 
                 run.setText(text.toString());
@@ -76,9 +78,5 @@ public class Document {
                 document.write(output);
             }
         }
-    }
-
-    public int getFlyweightCount() {
-        return characterFactory.getFlyweightCount();
     }
 }
